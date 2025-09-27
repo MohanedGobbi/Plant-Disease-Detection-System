@@ -67,12 +67,17 @@ pip install -r requirements.txt
 The application requires several pre-trained models:
 
 1. **XGBoost Model**: `models/xgb_plant_disease.pkl`
-2. **ResNet18 Feature Extractor**: `models/resnet18_feature_extractor_full.pth`
+2. **ResNet18 Feature Extractor**: Download separately from [Google Drive](https://drive.google.com/file/d/1GaTmNe2cyULIJu9gH809pPfiYOwgtome/view?usp=drive_link) and place it as `models/resnet18_feature_extractor_full.pth`
 3. **BiLSTM Model**: `models/bilstm_model.pth`
 4. **Vocabulary and Embeddings**: 
    - `models/vocab.pkl`
    - `models/label_encoder.pkl`
    - `models/embedding_matrix.npy`
+
+#### Manual Download Steps for ResNet18 Model:
+1. Download the ResNet18 model from: [https://drive.google.com/file/d/1GaTmNe2cyULIJu9gH809pPfiYOwgtome/view?usp=drive_link](https://drive.google.com/file/d/1GaTmNe2cyULIJu9gH809pPfiYOwgtome/view?usp=drive_link)
+2. Create a `models/` directory in your project root if it doesn't exist
+3. Place the downloaded file as `models/resnet18_feature_extractor_full.pth`
 
 ### Required Data Files
 - `data/plantwild_prompts.json` - Disease symptom descriptions for similarity matching
@@ -152,7 +157,7 @@ plant-disease-detection/
 │
 ├── models/                         # Pre-trained models directory
 │   ├── xgb_plant_disease.pkl
-│   ├── resnet18_feature_extractor_full.pth
+│   ├── resnet18_feature_extractor_full.pth  # Download separately!
 │   ├── bilstm_model.pth
 │   ├── vocab.pkl
 │   ├── label_encoder.pkl
@@ -239,6 +244,7 @@ black .
 
 #### Model Loading Errors
 - Ensure all model files are in the `models/` directory
+- **Important**: Make sure you've downloaded the ResNet18 model from the provided Google Drive link
 - Check file permissions and paths
 - Verify Python version compatibility
 
